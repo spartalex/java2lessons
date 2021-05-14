@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/lesson2/hw1/Wall.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/lesson2/negativeRectangleSideException.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
