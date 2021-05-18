@@ -38,6 +38,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/lesson3/MultipleGenBox.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/lesson3/hw2/ArrayUtils.java">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
