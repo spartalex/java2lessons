@@ -23,6 +23,11 @@ public class Cat implements Comparable<Cat> {
         this.name = name;
     }
 
+    public Cat setNameBuild(String name) {
+        this.name = name;
+        return this;
+    }
+
     public int getAge() {
         return age;
     }
