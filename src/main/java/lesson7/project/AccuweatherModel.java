@@ -1,6 +1,7 @@
 package lesson7.project;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lesson7.project.entity.Weather;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -37,7 +38,13 @@ public class AccuweatherModel implements WeatherModel {
                     .build();
 
             Response response = okHttpClient.newCall(request).execute();
-            System.out.println(response.body().string());
+            String responseString = response.body().string();
+            String weatherText = objectMapper.readTree(responseString).get(0).at("/WeatherText").asText();
+            Integer degrees = objectMapper.readTree(responseString).get(0).at("/Temperature/Metric/Value").asInt();
+            Weather weather = new Weather(selectedCity, weatherText, degrees);
+            System.out.println(weather);
+            DataBaseRepository dataBaseRepository = new DataBaseRepository();
+            dataBaseRepository.saveWeather(weather);
             //TODO: сделать красивый вывод в консоль
         }
 
