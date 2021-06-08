@@ -94,6 +94,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/main/java/lesson9/FunctionInterfacesExamples.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/main/java/lesson9/hw/Main.java">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
