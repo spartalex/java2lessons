@@ -53,10 +53,10 @@ public class SqliteExamples {
             preparedStatement.setInt(2, 12);
             preparedStatement.addBatch();
             preparedStatement.executeBatch();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } finally {
             try {
                 connection.close();

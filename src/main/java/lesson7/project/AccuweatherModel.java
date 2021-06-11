@@ -21,9 +21,10 @@ public class AccuweatherModel implements WeatherModel {
     private static final String API_KEY = "pXJd8MokcZCdrd2MsoGl2DBZAyCa0zvv";
     static OkHttpClient okHttpClient = new OkHttpClient();
     static ObjectMapper objectMapper = new ObjectMapper();
+    DataBaseRepository dataBaseRepository = new DataBaseRepository();
 
-    public void getWeather(String selectedCity, Period period) throws IOException {
-        if (period == Period.NOW) {
+    public void getWeather(String selectedCity, Variant period) throws IOException {
+        if (period == Variant.NOW) {
             HttpUrl httpUrl = new HttpUrl.Builder()
                     .scheme(PROTOCOL)
                     .host(BASE_HOST)
@@ -43,14 +44,17 @@ public class AccuweatherModel implements WeatherModel {
             Integer degrees = objectMapper.readTree(responseString).get(0).at("/Temperature/Metric/Value").asInt();
             Weather weather = new Weather(selectedCity, weatherText, degrees);
             System.out.println(weather);
-            DataBaseRepository dataBaseRepository = new DataBaseRepository();
             dataBaseRepository.saveWeather(weather);
             //TODO: сделать красивый вывод в консоль
         }
 
-        if (period == Period.FIVE_DAYS) {
+        if (period == Variant.FIVE_DAYS) {
             // TODO*: реализовать вывод прогноза погоды на 5 дней
         }
+    }
+
+    public void getSavedWeather() {
+        dataBaseRepository.getSavedWeather();
     }
 
     public String getCityKey(String city) throws IOException {
