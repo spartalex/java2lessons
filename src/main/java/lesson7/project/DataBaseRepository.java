@@ -35,6 +35,7 @@ public class DataBaseRepository {
     }
 
     public void getSavedWeather() {
+        //TODO: реализовать вывод погоды (ниже пример, как это можно сделать)
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:geekbrains.db");
              Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("select * from weather");
